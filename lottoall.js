@@ -223,7 +223,7 @@ funcSetBaseTable = function(){
 
 	if (null != lottodata && lottodata.length > 0)
 	{
-		for (var i=lottodata.length-1; i>=0; i--)
+		for (var i=0; i<=lottodata.length-1; i++)
 		{
 			trHtml = "<tr>";
 			for (var j=0; j<8 ; j++)
@@ -253,7 +253,7 @@ funcSetReAppearTable = function(){
 
 	if (null != lottodata && lottodata.length > 0)
 	{
-		for (var i=lottodata.length-1; i>=0; i--)
+		for (var i=0; i<=lottodata.length-1; i++)
 		{
 			reAppCnt = 0;
 
