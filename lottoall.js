@@ -407,7 +407,8 @@ funcSetSelectBoxTerm = function(){
 //////////////////////////////////////////////////////////////////////////////////////////////
 funcSetSideData = function(){
 	
-	for (var i=0; i < lottodata.length ; i++ )
+	for (var i=lottodata.length-1; i>=0; i--)
+	// for (var i=0; i < lottodata.length ; i++ )	// lottodata seq 역정렬하여 순서를 변경함.
 	{
 		
 
