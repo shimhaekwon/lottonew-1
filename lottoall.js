@@ -15,6 +15,7 @@ $(document).ready(function(){
 
 	funcSetColorArray();
 	funcSetSelectBox();
+	funcSetDataReverse(); // lottodata2 >> lottodata 역순으로
 	funcSetBaseTable();
 	funcSetSideData();
 
@@ -210,6 +211,22 @@ funcTest = function(){
 //		$("#divTest").append("<div style='background-color:hsla("+i+",100%,50%,0.9);border:1px solid black; width:196px;padding-left:5px;'>hsla("+i+",100%,50%,0.9)</div>");
 //	}
 };
+
+
+funcSetDataReverse = function() {
+	var icnt = 0;
+	if (null != lottodata2 && lottodata2.length > 0)
+	{
+		icnt = lottodata2.length-1;
+		lottodata 	= new Array();
+		for (var i=0; i<=icnt; i++){
+			console.log(';;;');
+			console.log("lottodata2:", JSON.stringify(lottodata2[icnt-i], 4,'') );
+			lottodata.push(lottodata2[icnt-i]);
+			console.log("lottodata:", JSON.stringify(lottodata2[icnt-i], 4,'') );
+		}
+	}
+}
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -223,7 +240,7 @@ funcSetBaseTable = function(){
 
 	if (null != lottodata && lottodata.length > 0)
 	{
-		for (var i=0; i<=lottodata.length-1; i++)
+		for (var i=lottodata.length-1; i>=0; i--)
 		{
 			trHtml = "<tr>";
 			for (var j=0; j<8 ; j++)
@@ -253,7 +270,7 @@ funcSetReAppearTable = function(){
 
 	if (null != lottodata && lottodata.length > 0)
 	{
-		for (var i=0; i<=lottodata.length-1; i++)
+		for (var i=lottodata.length-1; i>=0; i--)
 		{
 			reAppCnt = 0;
 
@@ -407,8 +424,7 @@ funcSetSelectBoxTerm = function(){
 //////////////////////////////////////////////////////////////////////////////////////////////
 funcSetSideData = function(){
 	
-	for (var i=lottodata.length-1; i>=0; i--)
-	// for (var i=0; i < lottodata.length ; i++ )	// lottodata seq 역정렬하여 순서를 변경함.
+	for (var i=0; i < lottodata.length ; i++ )
 	{
 		
 
